@@ -13,7 +13,7 @@ export const HomePage: React.FC = () => {
 
             <Navbar />
 
-            <main className="relative z-10">
+            <main className="relative z-10 overflow-hidden w-full h-full">
                 {/* Hero Section */}
                 <section className="px-4 md:px-8 pt-8 pb-16 max-w-[1440px] mx-auto">
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 mb-12">

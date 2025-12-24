@@ -1,6 +1,6 @@
 import React from "react";
 
-const Newsletter: React.FC = () => <section className="bg-gray-900 text-white py-24 px-4">
+const Newsletter: React.FC = () => <section id="contact-us" className="bg-gray-900 text-white py-24 px-4">
     <div className="max-w-2xl mx-auto text-center">
         <h2 className="text-3xl md:text-4xl font-serif mb-4">
             STAY UPDATED WITH OUR NEWSLETTER
