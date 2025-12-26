@@ -1,22 +1,25 @@
-import {Link} from 'react-router';
-import {Image, Money} from '@shopify/hydrogen';
+import { Link } from 'react-router';
+import { Image, Money } from '@shopify/hydrogen';
 import type {
   ProductItemFragment,
   CollectionItemFragment,
   RecommendedProductFragment,
 } from 'storefrontapi.generated';
-import {useVariantUrl} from '~/lib/variants';
+import { useVariantUrl } from '~/lib/variants';
+type Product =
+  | ProductItemFragment
+  | CollectionItemFragment
+  | RecommendedProductFragment;
 
-export function ProductItem({
+type ProductItemProps = {
+  product: Product;
+  loading?: 'eager' | 'lazy';
+}
+
+export const ProductItem: React.FC<ProductItemProps> = ({
   product,
   loading,
-}: {
-  product:
-    | CollectionItemFragment
-    | ProductItemFragment
-    | RecommendedProductFragment;
-  loading?: 'eager' | 'lazy';
-}) {
+}) => {
   const variantUrl = useVariantUrl(product.handle);
   const image = product.featuredImage;
   return (
@@ -42,3 +45,4 @@ export function ProductItem({
     </Link>
   );
 }
+export default ProductItem;
